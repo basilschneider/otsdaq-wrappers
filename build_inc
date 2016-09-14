@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+export CETPKG_J=$(nproc)
+. $Base/local*/setup
+source mrbSetEnv
+mrb b 2>&1 | tee build.out

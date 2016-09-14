@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+export CETPKG_J=$(nproc)
+. $Base/local*/setup
+source mrbSetEnv
+mrb z
+unsetup_all

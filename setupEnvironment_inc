@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+Products=/afs/cern.ch/user/b/bschneid/hardware/otsdaq/products
+Base=/afs/cern.ch/user/b/bschneid/hardware/otsdaq/mrb
+. "${Products}"/setup
+cd "${Base}"
+setup mrb
+setup git
+setup gitflow
+. "${Base}"/local*/setup
+#mrb updateSource
+. mrbSetEnv
+export USER_DATA="$Base"/srcs/otsdaq_cmsoutertracker/Data
+alias StartOTS.sh="$Base"/srcs/otsdaq_cmsoutertracker/tools/StartOuterTracker_Develop.sh
+export OTSDAQ_CMSOUTERTRACKER_DIR=${MRB_SOURCE}/otsdaq_cmsoutertracker
+export CETPKG_J=$(nproc)
